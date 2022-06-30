@@ -11,27 +11,34 @@
   font-weight: 500
 
 .second-currency
-  background-color: #2E5EA6
+  background-color: rgba(46, 94, 166, 0.9)
   border: none
-  border-radius: 10px
-  color: rgba(255, 255, 255, 0.85)
-  margin: 0 1rem
+  border-radius: 5px
+  color: rgba(255, 255, 255, 0.95)
+  margin: 0 1rem 0 0.5rem
   padding: .3rem .7rem
   font-family: 'Montserrat', serif
   font-weight: 500
   font-size: .9rem
+.second-currency:focus
+  outline: none
 
 .currency-amount
   border: 2px solid #2E5EA6
   border-radius: 5px
-  margin: 0 1rem
+  margin: 0 .5rem
   padding: .3rem .7rem
   font-family: 'Montserrat', serif
   font-weight: 500
   font-size: .9rem
-
 .currency-amount::placeholder
   color: rgba(46, 94, 166, 0.85)
+.currency-amount:hover
+  border: 2px solid rgb(39, 77, 138)
+.currency-amount:focus
+  color: #2E5EA6
+  outline: none
+
 
 .converter__result
   font-family: 'Oswald', serif
