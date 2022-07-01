@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {getLatestRate} from "../../helpers/getLatestRate";
 
 @Component({
@@ -7,13 +7,14 @@ import {getLatestRate} from "../../helpers/getLatestRate";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.sass']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   currenciesToUah: string[] = []
 
   ngOnInit() {
     this.getRateToUah('USD').then();
     this.getRateToUah('EUR').then();
   }
+
 
   getRateToUah(base: string) {
     return getLatestRate(base, 'UAH').then(r => {

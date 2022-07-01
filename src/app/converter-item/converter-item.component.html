@@ -1,0 +1,11 @@
+  <div class="converter__item">
+    <div class="first-currency">{{currency}}</div>
+    <input type="number" max="1000000" class="currency-amount" placeholder="Input amount" (input)="inputHandler($event)">
+    <select name="second-currency" class="second-currency" (change)="selectHandler($event)">
+      <option value="Choose currency" selected disabled>Choose currency</option>
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="AUD">AUD</option>
+    </select>
+    <div class="converter__result">{{result}}</div>
+  </div>

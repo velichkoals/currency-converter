@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-converter',
-  templateUrl: './converter.component.html',
+  template: `
+    <main class="converter">
+        <app-converter-item [currency]="currencies[0]"></app-converter-item>
+        <app-converter-item [currency]="currencies[1]"></app-converter-item>
+        <app-converter-item [currency]="currencies[2]"></app-converter-item>
+    </main>
+  `,
   styleUrls: ['./converter.component.sass']
 })
-export class ConverterComponent implements OnInit {
+export class ConverterComponent {
 
-  constructor() { }
 
-  ngOnInit(): void {
-  }
-
+  currencies: string[] = ['UAH', 'USD', 'EUR'];
 }
