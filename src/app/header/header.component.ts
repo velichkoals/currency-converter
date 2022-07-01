@@ -8,17 +8,15 @@ import {getLatestRate} from "../../helpers/getLatestRate";
   styleUrls: ['./header.component.sass']
 })
 export class HeaderComponent implements OnInit {
-  currenciesToUah: string[] = []
+  usdToUah = ''
+  eurToUah = ''
 
   ngOnInit() {
-    this.getRateToUah('USD').then();
-    this.getRateToUah('EUR').then();
-  }
-
-
-  getRateToUah(base: string) {
-    return getLatestRate(base, 'UAH').then(r => {
-      this.currenciesToUah.push(r);
+    getLatestRate('USD', 'UAH').then(r => {
+      this.usdToUah = r;
+    })
+    getLatestRate('EUR', 'UAH').then(r => {
+      this.eurToUah = r;
     })
   }
 }
